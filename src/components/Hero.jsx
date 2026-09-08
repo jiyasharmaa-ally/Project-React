@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroImage from "../../public/images/hero.png";
 
 function Hero() {
@@ -42,13 +43,19 @@ function Hero() {
                     <div
                         className="mt-10 flex items-center gap-5"
                     >
-                        <button className="rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:scale-105 cursor-pointer">
+                        <Link
+                            to="/shop"
+                            className="inline-block rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:scale-105"
+                        >
                             SHOP COLLECTION
-                        </button>
+                        </Link>
 
-                        <button className="rounded-full border border-black px-8 py-4 text-sm font-semibold transition duration-300 hover:bg-black hover:text-white cursor-pointer">
+                        <Link
+                            to="/skin-quiz"
+                            className="inline-block rounded-full border border-[#29231f] px-8 py-4 text-sm font-semibold transition duration-300 hover:bg-[#29231f] hover:text-white"
+                        >
                             TAKE SKIN QUIZ
-                        </button>
+                        </Link>
                     </div>
 
                 </div>

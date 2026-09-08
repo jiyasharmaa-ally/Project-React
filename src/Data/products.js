@@ -4,9 +4,12 @@ const products = [
     name: "Gentle Daily Cleanser",
     category: "Cleanser",
     price: 575,
+    oldPrice: 699,
     rating: 4.8,
     reviews: 124,
     image: "/images/cleanser.png",
+    heroImage: "/images/cleanser-model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 
   {
@@ -17,6 +20,8 @@ const products = [
     rating: 4.9,
     reviews: 210,
     image: "/images/serum.png",
+    heroImage: "/images/serum-model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 
   {
@@ -27,6 +32,8 @@ const products = [
     rating: 4.7,
     reviews: 156,
     image: "/images/moisturizer.png",
+    heroImage: "/images/moisturizer-model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 
   {
@@ -37,6 +44,8 @@ const products = [
     rating: 4.9,
     reviews: 189,
     image: "/images/sunscreen.png",
+    heroImage: "/images/sunscreen-model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 
   {
@@ -47,17 +56,22 @@ const products = [
     rating: 4.5,
     reviews: 119,
     image: "/images/glowcream.png",
+    heroImage: "/images/strobe.model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 
   {
     id: 6,
     name: "Lip balm",
-    category: "Lip cream",
+    category: "Lip Care",
     price: 349,
     rating: 4.9,
     reviews: 150,
     image: "/images/lipbalm.png",
+    heroImage: "/images/lip-model.png",
+    description: "A gentle cleanser that keeps your skin clean and hydrated.",
   },
 ];
+
 
 export default products;
