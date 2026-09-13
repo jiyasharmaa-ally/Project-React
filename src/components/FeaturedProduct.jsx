@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaStar } from "react-icons/fa";
-import products  from "../Data/products";
+import products from "../Data/products";
 
 function FeaturedProduct() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -105,9 +106,12 @@ function FeaturedProduct() {
           </p>
 
           {/* Button */}
-          <button className="mt-8 rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold tracking-wider text-white transition hover:bg-[#3d3530] cursor-pointer">
+          <Link
+            to="/shop"
+            className="mt-8 inline-block rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold tracking-wider text-white transition hover:bg-[#3d3530] cursor-pointer"
+          >
             SHOP NOW
-          </button>
+          </Link>
 
           {/* Counter */}
           <p className="mt-8 text-sm tracking-[0.3em] text-gray-400">

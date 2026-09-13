@@ -12,9 +12,9 @@ function Home() {
       <Hero />
       <BestSeller />
       <FeaturedProduct />
-      <Testimonials />
-      <AsSeenOn />
       <SkinAnalysis />
+      <AsSeenOn />
+      <Testimonials />
       <Footer />
     </>
   );

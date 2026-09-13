@@ -32,6 +32,12 @@ const shopProducts = [
         rating: 4.9,
         reviews: 210,
         image: "/images/serum.png",
+         images: [
+            "/images/serum.png",
+            "/images/serum.png",
+            "/images/serum.png",
+            "/images/serum.png",
+        ],
         description:
             "A lightweight serum formulated to boost radiance and support glowing skin.",
         skinType: ["Normal", "Dry", "Combination"],
@@ -47,6 +53,12 @@ const shopProducts = [
         rating: 4.7,
         reviews: 156,
         image: "/images/moisturizer.png",
+         images: [
+            "/images/moisturizer.png",
+            "/images/moisturizer.png",
+            "/images/moisturizer.png",
+            "/images/moisturizer.png",
+        ],
         skinType: ["Dry", "Normal", "Sensitive", "Combination"],
         concerns: ["Dryness", "Sensitivity", "Strong Skin Barrier"],
     },
@@ -60,6 +72,12 @@ const shopProducts = [
         rating: 4.9,
         reviews: 189,
         image: "/images/sunscreen.png",
+        images: [
+            "/images/sunscreen.png",
+            "/images/sunscreen.png",
+            "/images/sunscreen.png",
+            "/images/sunscreen.png",
+        ],
         skinType: ["Dry", "Normal", "Combination"],
         concerns: ["Dullness", "Uneven Skin Tone", "Healthy Glow"],
     },
@@ -72,6 +90,12 @@ const shopProducts = [
         rating: 4.5,
         reviews: 119,
         image: "/images/glowcream.png",
+        images: [
+            "/images/glowcream.png",
+            "/images/glowcream.png",
+            "/images/glowcream.png",
+            "/images/glowcream.png",
+        ],
         skinType: ["Dry", "Oily", "Combination", "Normal", "Sensitive"],
         concerns: [
             "Dark Spots",
@@ -88,6 +112,12 @@ const shopProducts = [
         rating: 4.9,
         reviews: 150,
         image: "/images/lipbalm.png",
+        images: [
+            "/images/lipbalm.png",
+            "/images/lipbalm.png",
+            "/images/lipbalm.png",
+            "/images/lipbalm.png",
+        ],
 
 
     },
@@ -99,6 +129,12 @@ const shopProducts = [
         rating: 4.5,
         reviews: 90,
         image: "/images/glycolicAcid.png",
+        images: [
+            "/images/glycolicAcid.png",
+            "/images/glycolicAcid.png",
+            "/images/glycolicAcid.png",
+            "/images/glycolicAcid.png",
+        ],
         skinType: ["Dry", "Normal", "Sensitive"],
         concerns: [
             "Dryness",
@@ -116,6 +152,12 @@ const shopProducts = [
         rating: 4.2,
         reviews: 190,
         image: "/images/foamCleanser.png",
+        images: [
+            "/images/foamCleanser.png",
+            "/images/foamCleanser.png",
+            "/images/foamCleanser.png",
+            "/images/foamCleanser.png",
+        ],
         skinType: ["Dry", "Oily", "Combination", "Normal", "Sensitive"],
         concerns: [
             "Dark Spots",
@@ -131,6 +173,12 @@ const shopProducts = [
         rating: 3.2,
         reviews: 136,
         image: "/images/gelCream.png",
+        images: [
+            "/images/gelCream.png",
+            "/images/gelCream.png",
+            "/images/gelCream.png",
+            "/images/gelCream.png",
+        ],
         skinType: ["Dry", "Oily", "Combination", "Normal", "Sensitive"],
         concerns: [
             "Dark Spots",
@@ -147,6 +195,12 @@ const shopProducts = [
         rating: 4.1,
         reviews: 189,
         image: "/images/lipCombo.png",
+        images: [
+            "/images/lipCombo.png",
+            "/images/lipCombo.png",
+            "/images/lipCombo.png",
+            "/images/lipCombo.png",
+        ],
     },
 ];
 

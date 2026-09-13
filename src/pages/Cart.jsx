@@ -42,9 +42,8 @@ function Cart() {
             <p className="mt-4 text-gray-600">
               {cartItems.length === 0
                 ? "Your bag is waiting for something beautiful."
-                : `${cartItems.length} ${
-                    cartItems.length === 1 ? "product" : "products"
-                  } in your bag`}
+                : `${cartItems.length} ${cartItems.length === 1 ? "product" : "products"
+                } in your bag`}
             </p>
 
           </div>
@@ -231,9 +230,11 @@ function Cart() {
 
 
                 {/* CHECKOUT */}
-                <button className="mt-8 w-full cursor-pointer rounded-full bg-[#29231f] px-6 py-4 text-sm font-semibold tracking-wide text-white transition duration-300 hover:bg-[#3d3530] hover:scale-[1.02]">
-                  PROCEED TO CHECKOUT
-                </button>
+                <Link to="/checkout">
+                  <button className="mt-8 w-full cursor-pointer rounded-full bg-[#29231f] px-6 py-4 text-sm font-semibold tracking-wide text-white transition duration-300 hover:scale-[1.02] hover:bg-[#3d3530]">
+                    PROCEED TO CHECKOUT →
+                  </button>
+                </Link>
 
 
                 <Link

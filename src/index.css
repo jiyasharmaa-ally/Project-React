@@ -9,3 +9,16 @@ body {
 .as-seen-slider .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+.truck-animation {
+  animation: truckMove 15s ease-in-out forwards;
+}
+
+@keyframes truckMove {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(175px);
+  }
+}

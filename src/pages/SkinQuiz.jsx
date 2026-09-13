@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useCart } from "../context/CartContext";
 
 import getRecommendedProducts from "../Data/skinRecommendation";
 import skinQuizQuestions from "../Data/skinQuizData";
@@ -72,7 +73,12 @@ function SkinQuiz() {
       setCurrentQuestion((previous) => previous - 1);
     }
   };
-
+  const { addToCart } = useCart();
+const handleAddRoutine = () => {
+  recommendedProducts.slice(0, 4).forEach((product) => {
+    addToCart(product);
+  });
+};
   return (
     <>
       <Navbar />
@@ -248,6 +254,7 @@ function SkinQuiz() {
                 </p>
 
                 <button
+                  onClick={handleAddRoutine}
                   className="mt-8 cursor-pointer rounded-full bg-[#e8dcc5] px-8 py-4 text-sm font-semibold tracking-wide text-[#29231f] transition duration-300 hover:scale-105 hover:bg-white"
                 >
                   ADD ROUTINE TO BAG
@@ -325,11 +332,10 @@ function SkinQuiz() {
                     <button
                       key={option}
                       onClick={() => handleSelect(option)}
-                      className={`cursor-pointer rounded-xl border p-5 text-left font-medium transition duration-300 ${
-                        answers[current.id] === option
+                      className={`cursor-pointer rounded-xl border p-5 text-left font-medium transition duration-300 ${answers[current.id] === option
                           ? "border-[#29231f] bg-[#29231f] text-white"
                           : "border-[#e8dcc5] bg-[#f8f5f0] text-[#29231f] hover:border-[#8B6F5A] hover:bg-[#e8dcc5]"
-                      }`}
+                        }`}
                     >
                       {option}
                     </button>
@@ -345,11 +351,10 @@ function SkinQuiz() {
                   <button
                     onClick={handleBack}
                     disabled={currentQuestion === 0}
-                    className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition ${
-                      currentQuestion === 0
+                    className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition ${currentQuestion === 0
                         ? "cursor-not-allowed text-gray-300"
                         : "cursor-pointer text-[#29231f] hover:bg-[#f3eee8]"
-                    }`}
+                      }`}
                   >
                     <FaArrowLeft />
                     BACK

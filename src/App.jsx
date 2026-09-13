@@ -19,6 +19,8 @@ import ShippingPolicy from "./pages/ShippingPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+import Checkout from "./pages/Checkout";
+import OrderPlaced from "./pages/OrderPlaced";
 
 function App() {
   useEffect(() => {
@@ -48,7 +50,8 @@ function App() {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
-
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-placed" element={<OrderPlaced />} />
       </Routes>
     </BrowserRouter>
   );

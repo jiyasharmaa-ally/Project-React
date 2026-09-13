@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import products from "../Data/products";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
@@ -8,7 +9,22 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 function BestSeller() {
+  const [addedProductId, setAddedProductId] = useState(null);
+
   const { addToCart } = useCart();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+
+    // Temporarily change button
+    setAddedProductId(product.id);
+
+    // Change back after 3 seconds
+    setTimeout(() => {
+      setAddedProductId(null);
+    }, 3000);
+  };
+
   return (
     <section className="bg-[#f8f5f0] px-8 py-24">
 
@@ -121,19 +137,31 @@ function BestSeller() {
               {/* Price + Add To Bag */}
               <div className="mt-5 flex items-center justify-between">
 
-                <span className="text-lg font-bold">
+                <span className="text-lg font-bold text-[#29231f]">
                   ₹{product.price}
                 </span>
 
-                <button
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    addToCart(product);
-                  }}
-                  className="cursor-pointer rounded-full bg-[#29231f] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#3d3530]"
-                >
-                  ADD TO BAG
-                </button>
+
+                {/* TEMPORARY BUTTON CHANGE */}
+                {addedProductId === product.id ? (
+
+                  <Link
+                    to="/cart"
+                    className="flex items-center gap-2 rounded-full bg-[#8B6F5A] px-4 py-2 text-xs font-semibold text-white transition duration-300 hover:bg-[#6f5747]"
+                  >
+                    GO TO CART →
+                  </Link>
+
+                ) : (
+
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="cursor-pointer rounded-full bg-[#29231f] px-4 py-2 text-xs font-semibold text-white transition duration-300 hover:bg-[#3d3530]"
+                  >
+                    ADD TO BAG
+                  </button>
+
+                )}
 
               </div>
 
