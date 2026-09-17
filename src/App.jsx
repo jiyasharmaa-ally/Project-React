@@ -21,7 +21,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Checkout from "./pages/Checkout";
 import OrderPlaced from "./pages/OrderPlaced";
-import FAQ from "./pages/Faq";
+import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
 import Retailer from "./pages/Retailer";
 import Reviews from "./pages/Reviews";
@@ -56,7 +56,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/retailer" element={<Retailer />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/FAQ" element={<FAQ />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-placed" element={<OrderPlaced />} />
         <Route path="/reviews" element={<Reviews />} /> 
