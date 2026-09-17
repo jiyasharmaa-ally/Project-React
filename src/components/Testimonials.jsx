@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import testimonials from "../Data/testimonials";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
+
 
 function Testimonials() {
   return (
@@ -97,9 +99,8 @@ function Testimonials() {
               data-aos="fade-up"
               data-aos-delay={index * 200}
               data-aos-duration="900"
-              className={`group relative rounded-[2rem] border border-white/60 bg-white/70 p-8 backdrop-blur-sm transition duration-500 hover:-translate-y-3 hover:bg-white hover:shadow-2xl ${
-                index === 1 ? "lg:-mt-6" : ""
-              }`}
+              className={`group relative rounded-[2rem] border border-white/60 bg-white/70 p-8 backdrop-blur-sm transition duration-500 hover:-translate-y-3 hover:bg-white hover:shadow-2xl ${index === 1 ? "lg:-mt-6" : ""
+                }`}
             >
 
               {/* Quote Icon */}
@@ -165,11 +166,12 @@ function Testimonials() {
             Join thousands of people discovering their healthiest-looking skin.
           </p>
 
-          <button
-            className="mt-6 rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold tracking-wider text-white transition duration-300 hover:scale-105 hover:bg-[#3d3530] cursor-pointer"
+          <Link
+            to="/reviews"
+            className="mt-6 inline-block rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold tracking-wider text-white transition duration-300 hover:scale-105 hover:bg-[#3d3530]"
           >
             READ ALL REVIEWS
-          </button>
+          </Link>
 
         </div>
 

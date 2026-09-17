@@ -2,8 +2,8 @@ import BestSeller from "../components/BestSeller";
 import FeaturedProduct from "../components/FeaturedProduct";
 import Hero from "../components/Hero";
 import Testimonials from "../components/Testimonials";
+import PressMarquee from "../components/PressMarquee";
 import Footer from "../components/Footer";
-import AsSeenOn from "../components/AsSeenOn";
 import SkinAnalysis from "../components/SkinAnalysis";
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
       <BestSeller />
       <FeaturedProduct />
       <SkinAnalysis />
-      <AsSeenOn />
+      <PressMarquee />
       <Testimonials />
       <Footer />
     </>

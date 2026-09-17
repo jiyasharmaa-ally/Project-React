@@ -36,7 +36,6 @@ function Shop() {
     "Glow Cream",
     "Lip Care",
     "Toner",
-    "+9",
   ];
 
   const filteredProducts =

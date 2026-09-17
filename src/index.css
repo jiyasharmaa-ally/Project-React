@@ -6,8 +6,65 @@
 body {
   font-family: 'Inter', sans-serif;
 }   
-.as-seen-slider .swiper-wrapper {
-  transition-timing-function: linear !important;
+.press-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.press-track {
+  display: flex;
+  width: max-content;
+
+  animation: pressScroll 25s linear infinite;
+}
+
+.press-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.press-brand {
+  margin: 0 40px;
+
+  white-space: nowrap;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  color: #292929;
+
+  cursor: pointer;
+}
+
+
+/* STOP WHEN HOVERED */
+
+.press-marquee:hover .press-track {
+  animation-play-state: paused;
+}
+
+
+/* CONTINUOUS MOVEMENT */
+
+@keyframes pressScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .press-brand {
+    margin: 0 25px;
+    font-size: 28px;
+  }
 }
 .truck-animation {
   animation: truckMove 15s ease-in-out forwards;

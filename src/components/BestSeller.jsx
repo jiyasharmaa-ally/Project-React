@@ -3,6 +3,7 @@ import { useState } from "react";
 import products from "../Data/products";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
@@ -13,13 +14,13 @@ function BestSeller() {
 
   const { addToCart } = useCart();
 
+  const { toggleWishlist, isInWishlist } = useWishlist();
+
   const handleAddToCart = (product) => {
     addToCart(product);
 
-    // Temporarily change button
     setAddedProductId(product.id);
 
-    // Change back after 3 seconds
     setTimeout(() => {
       setAddedProductId(null);
     }, 3000);
@@ -29,6 +30,7 @@ function BestSeller() {
     <section className="bg-[#f8f5f0] px-8 py-24">
 
       {/* Heading */}
+
       <div className="mb-14 text-center" data-aos="fade-up">
 
         <p className="mb-3 text-sm font-semibold tracking-[0.3em] text-[#8B6F5A]">
@@ -47,6 +49,7 @@ function BestSeller() {
 
 
       {/* SLIDER */}
+
       <Swiper
         modules={[Autoplay]}
         loop={true}
@@ -74,21 +77,32 @@ function BestSeller() {
 
             <div className="group relative rounded-2xl bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
 
+
               {/* Wishlist */}
+
               <button
-                className="absolute right-5 top-5 z-20 cursor-pointer text-gray-500 transition duration-300 hover:scale-110 hover:text-red-500"
+                onClick={() => toggleWishlist(product)}
+                className={`absolute right-5 top-5 z-20 cursor-pointer transition duration-300 hover:scale-110 ${
+                  isInWishlist(product.id)
+                    ? "text-red-500"
+                    : "text-gray-500 hover:text-red-500"
+                }`}
               >
+
                 <FaHeart className="text-xl" />
+
               </button>
 
 
               {/* CLICKABLE PRODUCT AREA */}
+
               <Link
                 to={`/product/${product.id}`}
                 className="block cursor-pointer"
               >
 
                 {/* Image */}
+
                 <div className="flex h-64 items-center justify-center overflow-hidden rounded-xl bg-[#f3eee8]">
 
                   <img
@@ -101,6 +115,7 @@ function BestSeller() {
 
 
                 {/* Details */}
+
                 <div className="mt-5">
 
                   <p className="text-xs font-semibold tracking-widest text-[#8B6F5A]">
@@ -113,6 +128,7 @@ function BestSeller() {
 
 
                   {/* Rating */}
+
                   <div className="mt-3 flex items-center gap-2">
 
                     <div className="flex text-yellow-500">
@@ -135,6 +151,7 @@ function BestSeller() {
 
 
               {/* Price + Add To Bag */}
+
               <div className="mt-5 flex items-center justify-between">
 
                 <span className="text-lg font-bold text-[#29231f]">
@@ -142,7 +159,8 @@ function BestSeller() {
                 </span>
 
 
-                {/* TEMPORARY BUTTON CHANGE */}
+                {/* ADD TO BAG */}
+
                 {addedProductId === product.id ? (
 
                   <Link
@@ -175,6 +193,7 @@ function BestSeller() {
 
 
       {/* View All Button */}
+
       <div className="mt-12 flex justify-center">
 
         <Link

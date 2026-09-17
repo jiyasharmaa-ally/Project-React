@@ -53,9 +53,7 @@ function Footer() {
               Contact Us
             </Link>
 
-            <Link to="/track-order" className="transition hover:text-[#e8dcc5]">
-              Track My Order
-            </Link>
+           
 
           </div>
         </div>

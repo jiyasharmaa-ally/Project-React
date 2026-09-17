@@ -85,7 +85,7 @@ const shopProducts = [
     {
         id: 5,
         name: "Ultra glow strobe cream",
-        category: "Glow Cream",
+        category: "Glow Cream" ,
         price: 780,
         rating: 4.5,
         reviews: 119,
