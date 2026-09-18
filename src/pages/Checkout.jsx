@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CheckoutAddress from "../components/checkout/CheckoutAddress";
-import CheckoutContact from "../components/checkout/CheckoutContact";
 import DeliveryOptions from "../components/checkout/DeliveryOptions";
 import PaymentMethod from "../components/checkout/PaymentMethod";
 import OrderSummary from "../components/checkout/OrderSummary";
@@ -41,7 +40,7 @@ function Checkout() {
 
                             <CheckoutAddress />
 
-                            <CheckoutContact />
+                            
 
                             <DeliveryOptions
                                 selectedDelivery={selectedDelivery}

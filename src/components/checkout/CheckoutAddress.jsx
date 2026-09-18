@@ -126,7 +126,7 @@ function CheckoutAddress() {
 
 
               {/* Address Details */}
-              <div>
+              <div className="min-w-0 flex-1">
 
                 <div className="flex items-center gap-3">
 
@@ -140,7 +140,7 @@ function CheckoutAddress() {
 
                 </div>
 
-                <p className="mt-3 leading-7 text-gray-600">
+                <p className="mt-3 break-words leading-7 text-gray-600">
                   {address.address}
                 </p>
 
