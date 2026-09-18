@@ -3,64 +3,88 @@ import heroImage from "../../public/images/hero.png";
 
 function Hero() {
     return (
-        <section
-            className="min-h-screen bg-cover bg-center"
-            style={{
-                backgroundImage: `url(${heroImage})`,
-            }}
-        >
-            <div className="min-h-screen flex items-center px-10 md:px-24 pt-16">
+        <section className="relative min-h-screen overflow-hidden">
+
+            {/* ================= DESKTOP BACKGROUND ================= */}
+            <div
+                className="absolute inset-0 hidden bg-cover bg-center md:block"
+                style={{
+                    backgroundImage: `url(${heroImage})`,
+                }}
+            />
+
+            {/* ================= MOBILE BACKGROUND ================= */}
+            <div
+                className="absolute inset-0 bg-cover bg-center md:hidden"
+                style={{
+                    backgroundImage: "url('/images/hero-mobile.png')",
+                }}
+            />
+
+            {/* ================= HERO CONTENT ================= */}
+            <div className="relative z-10 flex min-h-screen items-center px-6 pt-32 md:px-24 md:pt-16">
 
                 <div className="max-w-2xl">
 
+                    {/* Small heading */}
                     <p
                         data-aos="fade-up"
                         data-aos-delay="100"
-                        className="mb-5 text-sm font-semibold tracking-[0.25em]"
+                        className="mb-4 text-xs font-semibold tracking-[0.25em] md:mb-5 md:text-sm"
                     >
                         DISCOVER LUMÉA
                     </p>
 
+
+                    {/* Main heading */}
                     <h1
                         data-aos="fade-up"
                         data-aos-delay="200"
-                        className="font-['Cormorant_Garamond'] text-6xl font-semibold italic leading-[0.9]"
+                        className="max-w-[330px] font-['Cormorant_Garamond'] text-[46px] font-semibold italic leading-[0.92] md:max-w-2xl md:text-6xl"
                     >
                         SKINCARE MADE
                         <br />
                         FOR YOUR GLOW.
                     </h1>
 
+
+                    {/* Description */}
                     <p
                         data-aos="fade-up"
                         data-aos-delay="400"
-                        className="mt-7 max-w-lg text-lg leading-relaxed text-gray-700"
+                        className="mt-6 max-w-[330px] text-sm leading-relaxed text-gray-700 md:mt-7 md:max-w-lg md:text-lg"
                     >
                         Thoughtfully formulated essentials designed to nourish,
                         restore, and reveal your healthiest-looking skin.
                     </p>
 
-                    <div
-                        className="mt-10 flex items-center gap-5"
-                    >
+
+                    {/* Buttons */}
+                    <div className="mt-7 flex items-center gap-3 md:mt-10 md:gap-5">
+
+                        {/* Shop */}
                         <Link
                             to="/shop"
-                            className="inline-block rounded-full bg-[#29231f] px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:scale-105"
+                            className="inline-block rounded-full bg-[#29231f] px-5 py-3 text-xs font-semibold text-white transition duration-300 hover:scale-105 md:px-8 md:py-4 md:text-sm"
                         >
                             SHOP COLLECTION
                         </Link>
 
+
+                        {/* Skin Quiz */}
                         <Link
                             to="/skin-quiz"
-                            className="inline-block rounded-full border border-[#29231f] px-8 py-4 text-sm font-semibold transition duration-300 hover:bg-[#29231f] hover:text-white"
+                            className="inline-block rounded-full border border-[#29231f] px-5 py-3 text-xs font-semibold transition duration-300 hover:bg-[#29231f] hover:text-white md:px-8 md:py-4 md:text-sm"
                         >
                             TAKE SKIN QUIZ
                         </Link>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
     );
 }

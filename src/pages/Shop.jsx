@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState} from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import shopProducts from "../Data/shopData";
@@ -8,6 +8,9 @@ import { useCart } from "../context/CartContext";
 
 function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchParams] = useSearchParams();
+
+  const searchQuery = searchParams.get("search") || "";
 
   // TEMPORARY BUTTON STATE
   const [addedProductId, setAddedProductId] = useState(null);
@@ -18,10 +21,8 @@ function Shop() {
   const handleAddToCart = (product) => {
     addToCart(product);
 
-    // Change this product's button
     setAddedProductId(product.id);
 
-    // Change back after 3 seconds
     setTimeout(() => {
       setAddedProductId(null);
     }, 3000);
@@ -38,12 +39,20 @@ function Shop() {
     "Toner",
   ];
 
-  const filteredProducts =
-    selectedCategory === "All"
-      ? shopProducts
-      : shopProducts.filter(
-          (product) => product.category === selectedCategory
-        );
+  const filteredProducts = shopProducts.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
+
+    const query = searchQuery.toLowerCase();
+
+    const matchesSearch =
+      (product.name || "").toLowerCase().includes(query) ||
+      (product.category || "").toLowerCase().includes(query) ||
+      (product.description || "").toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <>
@@ -93,11 +102,10 @@ function Shop() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`cursor-pointer rounded-full px-6 py-3 text-sm font-semibold transition duration-300 ${
-                  selectedCategory === category
-                    ? "bg-[#29231f] text-white"
-                    : "border border-[#d8cbb9] bg-transparent text-[#29231f] hover:bg-[#e8dcc5]"
-                }`}
+                className={`cursor-pointer rounded-full px-6 py-3 text-sm font-semibold transition duration-300 ${selectedCategory === category
+                  ? "bg-[#29231f] text-white"
+                  : "border border-[#d8cbb9] bg-transparent text-[#29231f] hover:bg-[#e8dcc5]"
+                  }`}
               >
                 {category}
               </button>

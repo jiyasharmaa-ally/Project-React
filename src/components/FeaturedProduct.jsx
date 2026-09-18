@@ -32,26 +32,11 @@ function FeaturedProduct() {
             alt={product.name}
             className="h-full w-full object-cover"
           />
-
-          {/* Previous Button */}
-          <button
-            onClick={previousProduct}
-            className="absolute left-6 top-1/2 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 shadow-lg transition hover:scale-110 cursor-pointer"
-          >
-            <FaArrowLeft />
-          </button>
         </div>
+
 
         {/* RIGHT SIDE */}
         <div className="relative flex flex-col items-center justify-center px-8 py-16 text-center">
-
-          {/* Next Button */}
-          <button
-            onClick={nextProduct}
-            className="absolute right-6 top-1/2 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition hover:scale-110 cursor-pointer"
-          >
-            <FaArrowRight />
-          </button>
 
           {/* Badge */}
           <span className="mb-8 bg-[#29231f] px-4 py-2 text-sm font-semibold tracking-wider text-white">
@@ -122,6 +107,27 @@ function FeaturedProduct() {
         </div>
 
       </div>
+
+
+      {/* ================= ARROWS ================= */}
+
+      {/* Previous */}
+      <button
+        onClick={previousProduct}
+        className="absolute left-6 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/80 shadow-lg transition hover:scale-110"
+      >
+        <FaArrowLeft />
+      </button>
+
+
+      {/* Next */}
+      <button
+        onClick={nextProduct}
+        className="absolute right-6 top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-lg transition hover:scale-110"
+      >
+        <FaArrowRight />
+      </button>
+
     </section>
   );
 }
