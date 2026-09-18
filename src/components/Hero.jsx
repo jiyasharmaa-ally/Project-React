@@ -13,16 +13,24 @@ function Hero() {
                 }}
             />
 
+
             {/* ================= MOBILE BACKGROUND ================= */}
             <div
-                className="absolute inset-0 bg-cover bg-center md:hidden"
+                className="absolute inset-0 scale-[1.02] bg-cover bg-center blur-[1px] md:hidden"
                 style={{
                     backgroundImage: "url('/images/hero-mobile.png')",
                 }}
             />
 
+
+            {/* ================= MOBILE OVERLAY ================= */}
+            <div className="absolute inset-0 bg-white/10 md:hidden" />
+
+
             {/* ================= HERO CONTENT ================= */}
-            <div className="relative z-10 flex min-h-screen items-center px-6 pt-32 md:px-24 md:pt-16">
+            <div
+                className="relative z-10 flex min-h-screen items-center px-6 pt-32 md:px-24 md:pt-16"
+            >
 
                 <div className="max-w-2xl">
 
@@ -40,7 +48,7 @@ function Hero() {
                     <h1
                         data-aos="fade-up"
                         data-aos-delay="200"
-                        className="max-w-[330px] font-['Cormorant_Garamond'] text-[46px] font-semibold italic leading-[0.92] md:max-w-2xl md:text-6xl"
+                        className="max-w-[300px] font-['Cormorant_Garamond'] text-[44px] font-semibold italic leading-[0.9] md:max-w-2xl md:text-6xl"
                     >
                         SKINCARE MADE
                         <br />
@@ -52,7 +60,7 @@ function Hero() {
                     <p
                         data-aos="fade-up"
                         data-aos-delay="400"
-                        className="mt-6 max-w-[330px] text-sm leading-relaxed text-gray-700 md:mt-7 md:max-w-lg md:text-lg"
+                        className="mt-5 max-w-[290px] text-sm leading-relaxed text-gray-700 md:mt-7 md:max-w-lg md:text-lg"
                     >
                         Thoughtfully formulated essentials designed to nourish,
                         restore, and reveal your healthiest-looking skin.
@@ -60,7 +68,9 @@ function Hero() {
 
 
                     {/* Buttons */}
-                    <div className="mt-7 flex items-center gap-3 md:mt-10 md:gap-5">
+                    <div
+                        className="mt-7 flex items-center gap-3 md:mt-10 md:gap-5"
+                    >
 
                         {/* Shop */}
                         <Link

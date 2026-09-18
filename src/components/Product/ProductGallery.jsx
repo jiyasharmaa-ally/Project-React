@@ -11,10 +11,10 @@ function ProductGallery({ product }) {
       : [product.image];
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="min-w-0 w-full">
 
       {/* MAIN IMAGE */}
-      <div className="flex h-[500px] items-center justify-center overflow-hidden rounded-3xl bg-[#f3eee8] md:h-[650px]">
+      <div className="flex h-[500px] w-full items-center justify-center overflow-hidden rounded-3xl bg-[#f3eee8] md:h-[650px]">
 
         <img
           src={selectedImage}
@@ -24,15 +24,16 @@ function ProductGallery({ product }) {
 
       </div>
 
+
       {/* THUMBNAILS */}
-      <div className="flex gap-4 overflow-x-auto pb-2">
+      <div className="mt-5 grid w-full grid-cols-4 gap-3 md:flex md:gap-4 md:overflow-x-auto md:pb-2">
 
         {images.map((image, index) => (
 
           <button
             key={index}
             onClick={() => setSelectedImage(image)}
-            className={`flex h-24 w-24 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 transition duration-300 ${
+            className={`aspect-square w-full min-w-0 cursor-pointer overflow-hidden rounded-xl border-2 transition duration-300 md:h-24 md:w-24 md:shrink-0 ${
               selectedImage === image
                 ? "border-[#29231f]"
                 : "border-transparent bg-[#f3eee8] hover:border-[#8B6F5A]"
@@ -42,7 +43,7 @@ function ProductGallery({ product }) {
             <img
               src={image}
               alt={`${product.name} ${index + 1}`}
-              className="h-full w-full object-contain p-3"
+              className="h-full w-full object-contain p-2 md:p-3"
             />
 
           </button>
