@@ -8,39 +8,40 @@ import { useState } from "react";
 
 function Checkout() {
     const [selectedDelivery, setSelectedDelivery] = useState("standard");
+
     return (
         <>
             <Navbar />
 
-            <main className="min-h-screen bg-[#f8f5f0] px-6 pb-24 pt-32">
+            <main className="min-h-screen w-full overflow-hidden bg-[#f8f5f0] px-4 pb-24 pt-32 sm:px-6">
 
-                <div className="mx-auto max-w-7xl">
+                <div className="mx-auto w-full max-w-7xl">
 
-                    {/* CHECKOUT HEADER */}
-                    <div className="mb-12">
-                        <p className="text-sm font-semibold tracking-[0.25em] text-[#8B6F5A]">
+                    {/* ================= CHECKOUT HEADER ================= */}
+                    <div className="mb-10 md:mb-12">
+
+                        <p className="text-xs font-semibold tracking-[0.25em] text-[#8B6F5A] md:text-sm">
                             SECURE CHECKOUT
                         </p>
 
-                        <h1 className="mt-3 font-['Cormorant_Garamond'] text-5xl font-semibold text-[#29231f] md:text-6xl">
+                        <h1 className="mt-3 max-w-full break-words font-['Cormorant_Garamond'] text-[42px] font-semibold leading-[0.95] text-[#29231f] sm:text-5xl md:text-6xl">
                             Complete Your Order
                         </h1>
 
-                        <p className="mt-3 text-gray-600">
+                        <p className="mt-3 max-w-xl text-sm leading-6 text-gray-600 md:text-base">
                             Review your details and complete your purchase.
                         </p>
+
                     </div>
 
 
-                    {/* CHECKOUT CONTENT */}
-                    <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
+                    {/* ================= CHECKOUT CONTENT ================= */}
+                    <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-10">
 
-                        {/* LEFT SIDE */}
-                        <div className="space-y-8">
+                        {/* ================= LEFT SIDE ================= */}
+                        <div className="min-w-0 space-y-8">
 
                             <CheckoutAddress />
-
-                            
 
                             <DeliveryOptions
                                 selectedDelivery={selectedDelivery}
@@ -52,10 +53,13 @@ function Checkout() {
                         </div>
 
 
-                        {/* RIGHT SIDE */}
+                        {/* ================= RIGHT SIDE ================= */}
+                        <div className="min-w-0">
 
-                        <div>
-                            <OrderSummary selectedDelivery={selectedDelivery} />
+                            <OrderSummary
+                                selectedDelivery={selectedDelivery}
+                            />
+
                         </div>
 
                     </div>
